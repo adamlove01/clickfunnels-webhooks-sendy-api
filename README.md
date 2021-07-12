@@ -221,17 +221,6 @@ Login status (as verified by the 'authorize' middleware) is persisted (after pag
 
 If the user has disabled cookies in their browser, they can still remain logged in for 15 minutes (the expiry of the accessToken in the Vuex store) as long as they do not refresh the page or open a new tab. This is a good trade-off, since very few users will have cookies disabled. The accessToken has only 15 minute expiry to make it very difficult for hackers.
 
-## More Features Coming Soon
-- Login: Add forgot password / Reset password logic
-- Footer Section with 'Privacy' and 'Terms of Service' pages
-- More Section components
-- Winston and Morgan logging
-- Server-side pagination and filtering
-- Contact Us page
-- Newsletter signup widget
-- Youtube videos: Code walkthrough
-- Docs: nginx configuration 
-
 ## Author
 
 [Adam Love](https://github.com/adamlove01)  
