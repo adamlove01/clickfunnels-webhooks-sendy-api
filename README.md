@@ -44,8 +44,8 @@ This project is not just a code example or demo -- it's a complete website. Once
 
 **Clone Project and Install Dependencies**
 
-`git clone https://github.com/adamlove01/clickfunnels-webhooks-and-sendy-api.git`  
-`cd clickfunnels-webhooks-and-sendy-api`  
+`git clone https://github.com/adamlove01/clickfunnels-webhooks-sendy-api.git`  
+`cd clickfunnels-webhooks-sendy-api`  
 `npm install`
 
 ## Development Environment
@@ -76,13 +76,13 @@ Exit psql
 ## Install a database connector in your project
 
 For postgres, you can install 'pg':  
-`cd clickfunnels-webhooks-and-sendy-api`  
+`cd clickfunnels-webhooks-sendy-api`  
 `npm install pg`  
 
 ## Create an .env file
 
 The `.env` file defines your environment variables for the project.  
-`cd clickfunnels-webhooks-and-sendy-api`  
+`cd clickfunnels-webhooks-sendy-api`  
 `touch .env`  
 
 Add your database connection information that you created above. The default DB_PORT will depend on which database you use. DB_CLIENT is the database connector from above.
@@ -111,18 +111,18 @@ DB_CHARSET='utf8'
 **Migrations**  
 The migration files are in the `/database/migrations` folder. They create tables in your existing database.  
 
-`cd clickfunnels-webhooks-and-sendy-api`  
+`cd clickfunnels-webhooks-sendy-api`  
 `knex migrate:latest --knexfile knexfile.cjs`  
 
 **Seeds**  
 The seed files are in the `/databse/seeds` folder. They add data to your tables.
 
-`cd clickfunnels-webhooks-and-sendy-api`  
+`cd clickfunnels-webhooks-sendy-api`  
 `knex seed:run --knexfile knexfile.cjs`  
 
 ## Start up the local server with hot reload
 
-`cd clickfunnels-webhooks-and-sendy-api`  
+`cd clickfunnels-webhooks-sendy-api`  
 `npm run dev`  
 
 When you see  
