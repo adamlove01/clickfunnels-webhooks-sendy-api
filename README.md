@@ -12,7 +12,7 @@ This means you don't need to use paid automation apps such as Zapier or email li
 
 You do however need to pay a one-time fee for Sendy, and your server has a monthly fee. Sendy needs to be installed on the same server as this app, and both are intended to run behind [NGINX](https://www.nginx.com/). A sample NGINX config is provided in this project.
 
-This project is not just a code example or demo -- it's a complete website. Once set up, you can log in as an admin, view or change purchase data, add or update products and create new users. The website uses [nuxt-SSR-secure-website](link) as a base.
+This project is not just a code example or demo -- it's a complete website. Once set up, you can log in as an admin, view or change purchase data, add or update products and create new users. The website uses [nuxt-SSR-secure-website](https://github.com/adamlove01/nuxt-ssr-secure-website) as a base.
 
 ## Technology
 
@@ -160,17 +160,30 @@ You can use Git or some other method. A good place for your project is `/var/www
 
 Create a new `.env` file at the root of your server project. You will use all the same variables as on your local system `.env` file, but you need to change the database DB_ values to match your server database.  
 
-Also change these three values:  
 `.env`
 ```
 NODE_ENV=production
 BASE_URL=http://localhost:3000
 BROWSER_BASE_URL=https://myDomain.org
+TOKEN_AUTH_SECRET=6f3dd6e7005ff901ec4330479363218e61e94fae4a86f072e44db4636b8dd7b2
+DB_PORT=5432
+DB_NAME=myDatabase
+DB_HOST=localhost
+DB_USER=myUser
+DB_PASSWORD=myPassword
+DB_CLIENT='pg'
+DB_CHARSET='utf8'
 ...
 ```
 BROWSER_BASE_URL is for Axios calls (configured in nuxt.config.js) and should match your domain url.  
 
 BASE_URL should be http://localhost:3000 if you are running your site behind NGINX, otherwise it should also match your domain url.  
+
+**Run migrations and seeds**  
+
+`cd [project root]`  
+`knex migrate:latest --knexfile knexfile.cjs`   
+`knex seed:run --knexfile knexfile.cjs`  
 
 **Build the project**  
 
